@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session Archive</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/">Session Archive</a>
+    <form id="global-search" class="search" role="search">
+      <input id="q" type="search" placeholder="Search every conversation and memory (&quot;exact phrase&quot;, prefix*)" autocomplete="off">
+    </form>
+    <nav class="nav">
+      <a href="#/memory">Memory</a>
+      <a href="#/browse/">Everything exported</a>
+      <a href="#/about">About this export</a>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside class="side">
+      <input id="filter" type="search" placeholder="Filter sessions by title, folder, id" autocomplete="off">
+      <div class="toggles">
+        <label><input type="checkbox" id="show-active" checked> Active</label>
+        <label><input type="checkbox" id="show-archived" checked> Archived</label>
+        <label><input type="checkbox" id="show-deleted" checked> Deleted</label>
+        <label><input type="checkbox" id="show-cli" checked> Not in the app</label>
+      </div>
+      <div id="session-count" class="muted small"></div>
+      <ul id="sessions" class="sessions"></ul>
+    </aside>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
